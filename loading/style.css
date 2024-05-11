@@ -1,0 +1,214 @@
+svg {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Background */
+.cloud > * {
+  fill: #4e7767;
+  overflow: hidden;
+}
+
+.trunk {
+  stroke: #dbdada;
+}
+
+.leaves--back {
+  fill: #e1e1e1;
+}
+
+.leaves--fore {
+  fill: #efeded;
+}
+
+.branch {
+  fill: none;
+  stroke: #dbdada;
+}
+
+.tree .shadow {
+  opacity: 0.1;
+}
+
+.ground {
+  fill: #eaeaec;
+}
+
+/* Car */
+.wheel {
+  fill: #1b4f39;
+}
+
+.wheel .inner {
+  fill: #fff;
+  fill-opacity: 0.4;
+  stroke: #fff;
+}
+
+.surfboard,
+.shirt {
+  fill: #4f6f63;
+}
+
+.surfboard__stripe {
+  stroke: #fff;
+}
+
+.umbrella,
+.surfboard__pattern {
+  fill: rgba(184, 161, 87, 0.9960784314);
+}
+
+.shirt__stripe {
+  opacity: 0.2;
+  stroke: #fff;
+  stroke-width: 4;
+}
+
+.shadow--car {
+  opacity: 0.2;
+}
+
+.skin,
+.arm {
+  fill: #e0b26d;
+}
+
+.face {
+  fill: none;
+  stroke: #353b46;
+  stroke-linecap: round;
+}
+
+.hair {
+  fill: #353b46;
+}
+
+.car__body {
+  stroke: #365d57;
+  stroke-width: 22;
+}
+
+.car__highlight--fill,
+.car__highlight--stroke {
+  opacity: 0.1;
+}
+
+.car__highlight--fill {
+  fill: #fff;
+}
+
+.car__highlight--stroke {
+  stroke: #fff;
+  stroke-width: 10;
+}
+
+.car__stripe {
+  fill: #4ba485;
+}
+
+.windscreen {
+  fill: #9fabc2;
+}
+
+.mirror {
+  fill: #404356;
+}
+
+.bumpers {
+  stroke: #ccc;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.vehicle {
+  transform: translate3d(775px, 100px, 0);
+}
+
+/* Animations */
+@keyframes scroll {
+  from {
+    transform: translate3d(0, 0%, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.clouds--back,
+.clouds--fore,
+.trees--back,
+.trees--fore,
+.ground {
+  animation: scroll var(--scroll-speed) linear infinite;
+}
+
+.clouds--back {
+  --scroll-speed: 70s;
+}
+
+.clouds--fore {
+  --scroll-speed: 50s;
+}
+
+.trees--back,
+.ground {
+  --scroll-speed: 12s;
+}
+
+.trees--fore {
+  --scroll-speed: 6s;
+}
+
+@keyframes jitter {
+  0%, 100% {
+    transform: rotate(0) scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(var(--rotate-jitter, 10)) scale(var(--scale-jitter, 1.1)) translate3d(var(--x-jitter, 0), var(--y-jitter, 0), 0);
+  }
+}
+.shadow--car,
+.driver,
+.quiff,
+.surfboard,
+.umbrella,
+.car {
+  animation: jitter var(--jitter-speed) ease-in-out infinite;
+}
+
+.shadow--car {
+  --scale-jitter: 1.1;
+  --jitter-speed: 600ms;
+  transform-origin: 65.5px 75px;
+}
+
+.driver {
+  --y-jitter: 0.5px;
+  --jitter-speed: 600ms;
+}
+
+.quiff {
+  --y-jitter: 0;
+  --rotate-jitter: -20deg;
+  --jitter-speed: 1000ms;
+  transform-origin: 71px 19px;
+}
+
+.surfboard {
+  --y-jitter: 0.5px;
+  --rotate-jitter: -1deg;
+  --jitter-speed: 800ms;
+  transform-origin: 48px 67px;
+}
+
+.umbrella {
+  --y-jitter: 0.5px;
+  --rotate-jitter: 1deg;
+  --jitter-speed: 900ms;
+  transform-origin: 43px 55px;
+}
+
+.car {
+  --y-jitter: 1px;
+  --jitter-speed: 600ms;
+}/*# sourceMappingURL=style.css.map */
